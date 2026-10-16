@@ -3,33 +3,34 @@
 **Play. Learn. Level up.** QuizCraft is a responsive browser-based quiz platform built with plain HTML, CSS, and JavaScript.
 
 ## Features
-- Five built-in categories: General, Science, Technology, Geography, and Gaming
+- Built-in quiz categories: General, Science, Technology, Geography, and Gaming
 - Mixed, Easy, Medium, and Hard difficulty filters
-- Quick (5), Classic (10), and Marathon (15) round settings
-- Optional per-question countdown timer
+- Quick (5), Classic (10), and Marathon (15) rounds
+- Optional countdown timer
 - Immediate answer feedback and explanations
-- Scoring, round results, and saved stats
-- Custom quiz builder with four answer choices per question
-- Save, play, and delete your own quiz sets
+- Scores, round results, and saved play statistics
+- Daily Challenge: a deterministic mixed-topic set that changes by local calendar date
+- Achievement shelf with milestones for quiz completion, perfect rounds, topic exploration, quiz creation, and daily play streaks
+- Local leaderboard with recent results and editable player name
+- Custom quiz creator with four multiple-choice answers per question
+- Import and export individual custom quizzes or a full JSON backup
 - Responsive layout for desktop and mobile
-- No dependencies, build step, server, account, or API key required
+- No external libraries, build step, backend, or API key required
 
 ## Run locally
 Open `index.html` in a modern browser.
 
 ## Publish with GitHub Pages
-1. Open the repository's **Settings → Pages**.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Select branch `main` and folder `/(root)`, then save.
-4. Wait for GitHub Pages to finish publishing, then open the Pages URL shown in Settings.
-
-If GitHub does not offer Pages for this private repository on the current plan, make the repository public or use a hosting option that supports private repositories.
+This repository includes a GitHub Actions workflow at `.github/workflows/deploy.yml`. It deploys the repository root whenever code is pushed to `main`. Configure **Settings → Pages → Build and deployment → Source: GitHub Actions** if Pages isn't already configured.
 
 ## Data and privacy
-QuizCraft stores custom quiz sets and player stats in the browser's `localStorage`. This data stays in that browser profile on that device; it is not synced between devices and may be lost if browser storage is cleared. There is no backend or online leaderboard yet.
+Quiz sets, player name, play history, and stats are stored in the browser's `localStorage`. They are not synchronized between devices and can be lost if browser storage is cleared. The leaderboard is local to the browser; it is not an online/global leaderboard. No account system or backend is included yet.
+
+Use **My quizzes → Export all** to download a JSON backup. Import a QuizCraft JSON backup or a single quiz JSON file to restore/share custom sets.
 
 ## Project files
-- `index.html` — the entire app, styles, built-in question bank, and JavaScript
+- `index.html` — the single-file app, styles, built-in question bank, and application logic
+- `.github/workflows/deploy.yml` — automatic GitHub Pages deployment
 
 ## Status
-Starter version. The app works without external libraries. Custom quizzes and progress are local to each browser.
+A client-side starter platform. Custom questions and scores remain on the user's device.
